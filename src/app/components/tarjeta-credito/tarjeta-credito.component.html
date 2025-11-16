@@ -16,8 +16,8 @@
             <div class="card">
                 <div class="card-body">
                     <!-- Creamos el componente de Agregar Tarjeta utilizando elementos de bootstrap como el formulario eíconos de Font Awesome -->
-                    <h5 class="titulo">Agregar Tarjeta</h5>
-                    <form [formGroup]="form" (ngSubmit)="agregarTarjeta()">
+                    <h5 class="titulo">{{accion | uppercase}} TARJETA</h5>
+                    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
                         <!-- Input de Titular-->
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text">
@@ -92,10 +92,10 @@
                                 <td>{{tarjeta.numeroTarjeta}}</td>
                                 <td>{{tarjeta.fechaExpiracion}}</td>
                                 <td>
-                                    <i class="far fa-solid fa-pen-to-square text-info"></i>
+                                    <i (click)="editarTarjeta(tarjeta)" class="far fa-solid fa-pen-to-square text-info"></i>
                                 </td>
                                 <td>
-                                    <i class="far fa-solid fa-trash text-danger"></i>
+                                    <i (click)="eliminarTarjeta(tarjeta.id)" class="far fa-solid fa-trash text-danger"></i>
                                 </td>
                             </tr>
                         </tbody>

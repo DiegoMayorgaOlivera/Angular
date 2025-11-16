@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { provideHttpClient  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-credito.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { TarjetaCreditoComponent } from './components/tarjeta-credito/tarjeta-cr
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [],
+  providers: [provideHttpClient ()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
